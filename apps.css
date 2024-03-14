@@ -1,0 +1,118 @@
+html {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+body {
+    min-height: 100%;
+    background-color: #2b542c;
+    background-image: url("https://www.visitluxembourg.com/fileadmin/_processed_/f/f/csm_Luxembourg_City5_-_LCTO_01_7e246a1df5.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left top;
+    background-size: 100% 100%;
+}
+body {
+    position: relative;
+    z-index: 0;
+    color: rgba(0, 0, 0, 0.4);
+}
+#cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+#navigation-bar-container {
+    margin: 10px auto;
+    border-radius: 10px;
+}
+@media (min-width: 768px) {
+    #navigation-bar-container {
+        width: 50%;
+    }
+}
+
+#navigation-bar-container a.navbar-brand,
+#navbar ul a {
+    font-weight: 900;
+}
+#navigation-bar-container a.navbar-brand {
+    font-size: 3.2rem;
+}
+#navbar ul a {
+    font-size: 1.8rem;
+} 
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+#center-content {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+#footer-content {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.card {
+    background-color: rgba(0, 0, 0, 0.5); /* Set the background color to black with a transparency of 0.5 */
+    color: white; /* Set the color of the text to white */
+    border: none; /* Remove any default border styling */
+    padding: 16px; /* Add some padding to the card for spacing */
+    width: 100%; /* Set the width of the card to 100% of its parent element */
+  }
+  
+  .card img {
+    max-width: 100%; /* Set the maximum width of the image to 100% of its parent element */
+    height: auto; /* Set the height of the image to auto, so it maintains its aspect ratio */
+  }
+  
+  .card h1 {
+    color: white; /* Set the color of the h1 text to white */
+  }
+
+
+  #introduction {
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 50%;
+    color: white;
+    margin-bottom: 10px;
+    order: 1;
+}
+#animal-cards {
+    margin: 10px auto 0; /* Add margin at the top */
+    order: 2;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .intro {
+    order: -1;
+    text-align: center;
+    color: white;
+    background-color: #0000008b; /* Optional: Add a dark background color to emphasize the white font */
+    margin-top: 135px;
+    margin-bottom: 15px;
+      }
+ 
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      }
