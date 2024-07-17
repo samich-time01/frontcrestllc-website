@@ -2,50 +2,201 @@
 <html lang="en">
 <head>
     <link rel="icon" type="image/x-icon" href="frontcrestlogo.ico">
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="main.css" type="text/css">
-
-  <title>FrontCrest-Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaminoan Cloning Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to bottom right, #003366, #001a33);
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 51, 102, 0.8);
+            border-bottom: 2px solid #00bfff;
+            position: relative;
+            z-index: 10;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            letter-spacing: 2.5px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #00bfff;
+        }
+        .hero {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #001a33;
+            z-index: 1;
+        }
+        .hero h2 {
+            font-size: 3em;
+            z-index: 10;
+            position: relative;
+        }
+        .section {
+            padding: 60px 50px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00bfff;
+        }
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: #00bfff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background: #0099cc;
+            transform: scale(1.05);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            word-spacing: 150px;
+            letter-spacing: 2px;
+            font-size: 1.25em;
+        }
+    </style>
+    </style>
 </head>
 <body>
-    <div id="cover"></div>
-    <nav id="navigation-bar-container" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"><img src="frontcrestlogo.png" width="auto" height="45"></a>
+    <div id="particles-js"></div>
     
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="apps.html">Apps</a></li>
-            </ul>
-        </div>
-    
-    </nav>
-    <div id="center-content">
-        <h1>Apps You'll Love.</h1>
-        <p class="lead">But not too much!</p>
-        <p class="lead">
-            <!--<a href="#" class="btn btn-lg btn-success">Learn more</a> -->
-        </p>
+    <header>
+        <h1><a href="index.html" style="color: white; text-decoration: none;">FrontCrest</a></h1>
+        <nav>
+            <a href="apps.html">Apps</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>W e l c o m e</h2>
     </div>
-    
-<footer id="footer-content">
-  <small>Copyright &copy; FrontCrest LLC</small>
-</footer>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <div id="Apps" class="section">
+        <h2>Celebrate with Us</h2>
+        <p>Welcome to Kaminoan Cloning Technology, the forefront of genetic and cloning research in the galaxy. Our state-of-the-art facilities and unmatched expertise ensure the highest quality of cloned specimens.</p>
+    </div>
+
+    <div class="section" id="About">
+        <h2>Our About</h2>
+        <p>From personalized cloning About to advanced genetic modifications, we offer a wide range of solutions tailored to meet the unique needs of our clients.</p>
+        <button class="button">Learn More</button>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Reach out to us for inquiries and consultations. Our dedicated team of scientists and support staff are here to assist you.</p>
+        <button class="button">Get in Touch</button>
+    </div>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 101,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "circle",
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"
+                    },
+                    onclick: {
+                        enable: false,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
