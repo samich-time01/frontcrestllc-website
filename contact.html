@@ -80,11 +80,13 @@
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #00bfff;
+            letter-spacing:5px;
         }
         .section p {
             font-size: 1.2em;
             line-height: 1.6;
             color: #e0e0e0;
+            letter-spacing:3.5px;
         }
         .button {
             display: inline-block;
@@ -130,6 +132,17 @@
             height: 150px;
             resize: vertical;
         }
+        footer {
+            background: rgba(0, 51, 102, 0.0);
+            color: white; /* Text color */
+            text-align: center; /* Center-align the text */
+            padding: 10px; /* Add some padding */
+            position: fixed; /* Position it at the bottom of the page */
+            bottom: 0; /* Align it to the bottom */
+            width: 100%; /* Make it full width */
+            z-index: 10; /* Ensure it's above other content */
+            letter-spacing:3.5px;
+        }
     </style>
 </head>
 <body>
@@ -144,29 +157,20 @@
         </nav>
     </header>
 
-    <div class="hero">
+<!--    <div class="hero">
         <h2>Contact Us</h2>
-    </div>
+    </div>   -->
 
-    <div id="ContactForm" class="section">
-        <h2>Get in Touch</h2>
-        <p>We'd love to hear from you. Whether you have a question about our services, need technical support, or want to explore collaboration opportunities, our team is ready to assist you.</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <input type="text" placeholder="Subject">
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="button">Send Message</button>
-        </form>
+    <div id="ContactInfo" class="section">
+        <h2>Contact Us</h2>
+        <p>For media inquiries: <a href="mailto:media@frontcrest.llc">media@frontcrest.llc</a></p>
+        <p>For Android support: <a href="mailto:android@frontcrest.llc">android@frontcrest.llc</a></p>
+        <p>For business inquiries: <a href="mailto:business@frontcrest.llc">business@frontcrest.llc</a></p>
+        <p>Address: 312 W 2nd St #3106, Casper, WY 82601, USA</p>
     </div>
-
-    <div class="section" id="ContactInfo">
-        <h2>Our Contact Information</h2>
-        <p>Email: info@frontcrest.com</p>
-        <p>Phone: +1 (555) 123-4567</p>
-        <p>Address: 123 Tech Plaza, Innovation City, FC 12345</p>
-        <img src="https://tinyurl.com/urimagehere" alt="Office Location" style="max-width: 100%; height: auto; margin-top: 20px;">
-    </div>
+    <footer>
+        <p>© 2024 | All Rights Reserved</p>
+    </footer>    
 
     <script>
         particlesJS('particles-js', {
