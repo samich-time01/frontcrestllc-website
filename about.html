@@ -28,7 +28,7 @@
         header h1 {
             margin: 0;
             font-size: 2em;
-            letter-spacing: 2.5px;
+            letter-spacing: 5px;
         }
         nav ul {
             list-style: none;
@@ -69,6 +69,7 @@
             font-size: 3em;
             z-index: 10;
             position: relative;
+            letter-spacing: 5px;
         }
         .section {
             padding: 60px 50px;
@@ -80,11 +81,13 @@
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #00bfff;
+            letter-spacing:5px;
         }
         .section p {
             font-size: 1.2em;
             line-height: 1.6;
             color: #e0e0e0;
+            letter-spacing:3.5px;
         }
         .button {
             display: inline-block;
@@ -109,6 +112,17 @@
             letter-spacing: 2px;
             font-size: 1.25em;
         }
+        footer {
+            background: rgba(0, 51, 102, 0.0);
+            color: white; /* Text color */
+            text-align: center; /* Center-align the text */
+            padding: 10px; /* Add some padding */
+            position: fixed; /* Position it at the bottom of the page */
+            bottom: 0; /* Align it to the bottom */
+            width: 100%; /* Make it full width */
+            z-index: 10; /* Ensure it's above other content */
+            letter-spacing:3.5px;
+        }
     </style>
 </head>
 <body>
@@ -123,17 +137,20 @@
         </nav>
     </header>
 
-    <div class="hero">
+   <!-- <div class="hero">
         <h2>About Us</h2>
-    </div>
+    </div>  -->
 
     <div id="OurStory" class="section">
         <h2>Our Story</h2>
-        <p>[Insert your first about me paragraph here]</p>
-        <img src="https://tinyurl.com/urimagehere" alt="Our Story Image" style="max-width: 100%; height: auto; margin-top: 20px;">
+        <p>FrontCrest was founded in 2022 by William McGovern, a Luxembourgish American. <br>Our mission is to release apps which improve the quality of life of our users.</p>
+        <img src="map.png" >
     </div>
+    <footer>
+        <p>© 2024 | All Rights Reserved</p>
+    </footer>    
 
-    <div class="section" id="OurMission">
+    <!--<div class="section" id="OurMission">
         <h2>Our Mission</h2>
         <p>[Insert your second about me paragraph here]</p>
         <img src="https://tinyurl.com/urimagehere" alt="Our Mission Image" style="max-width: 100%; height: auto; margin-top: 20px;">
@@ -145,7 +162,7 @@
         <p>[Insert your third about me paragraph here]</p>
         <img src="https://tinyurl.com/urimagehere" alt="Our Team Image" style="max-width: 100%; height: auto; margin-top: 20px;">
         <button class="button">Meet the Team</button>
-    </div>
+    </div>   -->
 
     <script>
         particlesJS('particles-js', {
