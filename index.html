@@ -4,7 +4,7 @@
     <link rel="icon" type="image/x-icon" href="frontcrestlogo.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaminoan Cloning Technology</title>
+    <title>Apps - FrontCrest</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
@@ -80,11 +80,13 @@
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #00bfff;
+            letter-spacing:5px;
         }
         .section p {
             font-size: 1.2em;
             line-height: 1.6;
             color: #e0e0e0;
+            letter-spacing:3.5px;
         }
         .button {
             display: inline-block;
@@ -109,7 +111,60 @@
             letter-spacing: 2px;
             font-size: 1.25em;
         }
-    </style>
+        .app-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        .app-card {
+            background: rgba(0, 51, 102, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .app-card:hover {
+            transform: translateY(-10px);
+        }
+        .app-card h3 {
+            margin-top: 20px;
+            color: #00bfff;
+            letter-spacing:3.5px;
+        }
+        .phone-frame {
+            width: 280px;
+            height: 500px;
+            background-color: #222;
+            border-radius: 30px;
+            padding: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+        footer {
+            background: rgba(0, 51, 102, 0.0);
+            color: white; /* Text color */
+            text-align: center; /* Center-align the text */
+            padding: 10px; /* Add some padding */
+            position: fixed; /* Position it at the bottom of the page */
+            bottom: 0; /* Align it to the bottom */
+            width: 100%; /* Make it full width */
+            z-index: 10; /* Ensure it's above other content */
+            letter-spacing:3.5px;
+        }
     </style>
 </head>
 <body>
@@ -124,51 +179,53 @@
         </nav>
     </header>
 
-    <div class="hero">
-        <h2>W e l c o m e</h2>
+
+    <div id="FeaturedApps" class="section">
+        <h2>Featured Applications</h2>
+        <p>Explore our cutting-edge applications designed to revolutionize your digital experience.</p>
+        <div class="app-grid">
+            <div class="app-card">
+                <h3>Chess Puzzles Lite</h3>
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <img src="chess.gif" alt="Chess Puzzles Lite">
+                    </div>
+                </div>
+                <p>The lite version. Available now!</p>
+                <a href="https://play.google.com/store/apps/details?id=llc.frontcrest.chess_puzzles_lite&hl=en&pli=1" target="_blank">
+                    <button class="button">Learn More</button>
+                </a> <!-- Close the anchor tag here -->
+            </div>
+            <div class="app-card">
+                <h3>Reading App (Release date TBD)</h3>
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <img src="reading.gif" alt="Reading App">
+                    </div>
+                </div>
+                <p>Read books or listen to them!</p>
+                <!-- <button class="button">Get Notified</button> -->
+            </div>
+        </div>
     </div>
 
-    <div id="Apps" class="section">
-        <h2>Celebrate with Us</h2>
-        <p>Welcome to Kaminoan Cloning Technology, the forefront of genetic and cloning research in the galaxy. Our state-of-the-art facilities and unmatched expertise ensure the highest quality of cloned specimens.</p>
-    </div>
-
-    <div class="section" id="About">
-        <h2>Our About</h2>
-        <p>From personalized cloning About to advanced genetic modifications, we offer a wide range of solutions tailored to meet the unique needs of our clients.</p>
-        <button class="button">Learn More</button>
-    </div>
-
-    <div class="section" id="contact">
-        <h2>Contact Us</h2>
-        <p>Reach out to us for inquiries and consultations. Our dedicated team of scientists and support staff are here to assist you.</p>
-        <button class="button">Get in Touch</button>
-    </div>
+<!--    <div class="section" id="AppDevelopment">
+        <h2>Custom App Development</h2>
+        <p>Need a tailored solution? Our team of expert developers can bring your ideas to life.</p>
+        <button class="button">Request a Quote</button>
+    </div>   -->
+    <footer>
+        <p>© 2024 | All Rights Reserved</p>
+    </footer>    
 
     <script>
         particlesJS('particles-js', {
             particles: {
-                number: {
-                    value: 101,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#ffffff"
-                },
-                shape: {
-                    type: "circle",
-                },
-                opacity: {
-                    value: 0.5,
-                    random: false,
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                },
+                number: { value: 101, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
                 line_linked: {
                     enable: true,
                     distance: 150,
@@ -176,22 +233,13 @@
                     opacity: 0.4,
                     width: 1
                 },
-                move: {
-                    enable: true,
-                    speed: 2,
-                }
+                move: { enable: true, speed: 2 }
             },
             interactivity: {
                 detect_on: "canvas",
                 events: {
-                    onhover: {
-                        enable: true,
-                        mode: "grab"
-                    },
-                    onclick: {
-                        enable: false,
-                        mode: "push"
-                    },
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: false, mode: "push" },
                     resize: true
                 },
             },
