@@ -273,20 +273,15 @@
 
         async function scanBooksFolder() {
             try {
-                const response = await fetch(BOOKS_FOLDER);
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const links = Array.from(doc.querySelectorAll('a'));
+                const response = await fetch(BOOKS_FOLDER + 'list.txt');
+                const text = await response.text();
+                const filenames = text.split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0);
                 
-                const txtFiles = links
-                    .map(link => link.getAttribute('href'))
-                    .filter(href => href && href.endsWith('.txt'))
-                    .map(href => href.replace('.txt', ''));
-                
-                return txtFiles;
+                return filenames;
             } catch (error) {
-                console.error('Error scanning books folder:', error);
+                console.error('Error reading list.txt:', error);
                 return [];
             }
         }
