@@ -239,36 +239,52 @@
 
         function parseBookData(content) {
             const lines = content.split('\n');
-            const data = {};
+            let data = {
+                title: '',
+                authors: '',
+                description: '',
+                purchaseLink: '',
+                publicationDate: '',
+                printLength: ''
+            };
             
             for (let line of lines) {
                 line = line.trim();
-                if (line.startsWith('Title:')) {
-                    data.title = line.substring(6).trim();
-                } else if (line.startsWith('Author(s):')) {
-                    data.authors = line.substring(10).trim();
-                } else if (line.startsWith('Description:')) {
-                    data.description = line.substring(12).trim();
-                } else if (line.startsWith('Purchase Link:')) {
-                    data.purchaseLink = line.substring(14).trim();
-                } else if (line.startsWith('Publication Date:')) {
-                    data.publicationDate = line.substring(17).trim();
-                } else if (line.startsWith('Print Length:')) {
-                    data.printLength = line.substring(13).trim();
+                if (!line) continue;
+                
+                const colonIndex = line.indexOf(':');
+                if (colonIndex === -1) continue;
+                
+                const key = line.substring(0, colonIndex).trim();
+                const value = line.substring(colonIndex + 1).trim();
+                
+                if (key === 'Title') {
+                    data.title = value;
+                } else if (key === 'Author' || key === 'Authors' || key === 'Author(s)') {
+                    data.authors = value;
+                } else if (key === 'Description') {
+                    data.description = value;
+                } else if (key === 'Purchase Link' || key === 'Link') {
+                    data.purchaseLink = value;
+                } else if (key === 'Publication Date' || key === 'Published') {
+                    data.publicationDate = value;
+                } else if (key === 'Print Length' || key === 'Pages') {
+                    data.printLength = value;
                 }
             }
             
             return data;
         }
 
-        function parseDate(dateString) {
-            return new Date(dateString);
-        }
-
         function formatDate(dateString) {
-            const date = new Date(dateString);
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString('en-US', options);
+            if (!dateString) return 'Date not available';
+            try {
+                const date = new Date(dateString);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            } catch (e) {
+                return dateString;
+            }
         }
 
         async function scanBooksFolder() {
@@ -315,9 +331,7 @@
                     })
                 );
                 
-                const validBooks = books
-                    .filter(book => book !== null)
-                    .sort((a, b) => parseDate(b.publicationDate) - parseDate(a.publicationDate));
+                const validBooks = books.filter(book => book !== null);
                 
                 renderBooks(validBooks);
             } catch (error) {
@@ -343,18 +357,20 @@
                 
                 bookCard.innerHTML = `
                     <div class="book-cover">
-                        <img src="${book.imageUrl}" alt="${book.title}">
+                        <img src="${book.imageUrl}" alt="${book.title || 'Book cover'}">
                     </div>
-                    <h3>${book.title}</h3>
-                    <div class="book-author">by ${book.authors}</div>
-                    <div class="book-description">${book.description}</div>
+                    <h3>${book.title || 'Untitled'}</h3>
+                    <div class="book-author">by ${book.authors || 'Unknown Author'}</div>
+                    <div class="book-description">${book.description || 'No description available.'}</div>
                     <div class="book-meta">
-                        <div>Published: ${formatDate(book.publicationDate)}</div>
-                        <div>${book.printLength}</div>
+                        ${book.publicationDate ? `<div>Published: ${formatDate(book.publicationDate)}</div>` : ''}
+                        ${book.printLength ? `<div>${book.printLength}</div>` : ''}
                     </div>
-                    <a href="${book.purchaseLink}" target="_blank">
-                        <button class="button">View on Amazon</button>
-                    </a>
+                    ${book.purchaseLink ? `
+                        <a href="${book.purchaseLink}" target="_blank">
+                            <button class="button">View on Lulu</button>
+                        </a>
+                    ` : ''}
                 `;
                 
                 bookGrid.appendChild(bookCard);
